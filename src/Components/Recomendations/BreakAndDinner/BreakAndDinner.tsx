@@ -5,7 +5,6 @@ import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import BreakDinner1 from '../../../assets/Images/Recomendations/BreakDinner/BreakDinner1.png';
 import BreakDinner2 from '../../../assets/Images/Recomendations/BreakDinner/BreakDinner2.png';
 import BreakDinner3 from '../../../assets/Images/Recomendations/BreakDinner/BreakDinner3.png';
-import { caraouselHook } from "../../../../utils/Hooks/CarouselHook.tsx";
 import useMediaQuery from '@mui/material/useMediaQuery';
 
 

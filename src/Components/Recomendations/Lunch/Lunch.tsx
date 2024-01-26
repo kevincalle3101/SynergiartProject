@@ -5,7 +5,6 @@ import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import lunch1 from '../../../assets/Images/Recomendations/Lunch/Lunch1.png';
 import lunch2 from '../../../assets/Images/Recomendations/Lunch/Lunch2.png';
 import lunch3 from '../../../assets/Images/Recomendations/Lunch/Lunch3.png';
-import { caraouselHook } from "../../../../utils/Hooks/CarouselHook.tsx";
 import useMediaQuery from '@mui/material/useMediaQuery';
 
 const Lunch = () => {

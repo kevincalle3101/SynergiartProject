@@ -5,7 +5,6 @@ import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import Drinks1 from '../../../assets/Images/Recomendations/Drinks/Drink1.png';
 import Drinks2 from '../../../assets/Images/Recomendations/Drinks/Drink2.png';
 import Drinks3 from '../../../assets/Images/Recomendations/Drinks/Drink3.png';
-import { caraouselHook } from "../../../../utils/Hooks/CarouselHook.tsx";
 import useMediaQuery from '@mui/material/useMediaQuery';
 
 
