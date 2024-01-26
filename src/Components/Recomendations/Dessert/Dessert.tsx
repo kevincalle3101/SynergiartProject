@@ -2,9 +2,9 @@ import { Box, IconButton } from "@mui/material";
 import CardCaousel from '../../Cards/CardCarousel/CardCarousel.tsx';
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-import Dessert1 from '../../../assets/Images/Recomendations/Dessert/Dessert1.png';
-import Dessert2 from '../../../assets/Images/Recomendations/Dessert/Dessert2.png';
-import Dessert3 from '../../../assets/Images/Recomendations/Dessert/Dessert3.png';
+import Dessert1 from '../../../assets/Images/Recomendations/Dessert/dessert1.png';
+import Dessert2 from '../../../assets/Images/Recomendations/Dessert/dessert2.png';
+import Dessert3 from '../../../assets/Images/Recomendations/Dessert/dessert3.png';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
 const Dessert = () => {
