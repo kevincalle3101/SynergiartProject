@@ -2,9 +2,9 @@ import { Box, IconButton } from "@mui/material";
 import CardCaousel from '../../Cards/CardCarousel/CardCarousel.tsx';
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-import Drinks1 from '../../../assets/Images/Recomendations/Drinks/Drink1.png';
-import Drinks2 from '../../../assets/Images/Recomendations/Drinks/Drink2.png';
-import Drinks3 from '../../../assets/Images/Recomendations/Drinks/Drink3.png';
+import Drinks1 from '../../../assets/Images/Recomendations/Drinks/drink1.png';
+import Drinks2 from '../../../assets/Images/Recomendations/Drinks/drink2.png';
+import Drinks3 from '../../../assets/Images/Recomendations/Drinks/drink3.png';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
 
