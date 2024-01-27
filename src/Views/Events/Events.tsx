@@ -1,4 +1,3 @@
-import React from "react";
 import { Typography, Box } from "@mui/material";
 import Event1 from '../../assets/Images/Events/Event1.png';
 import Event2 from '../../assets/Images/Events/Event2.png';
