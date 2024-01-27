@@ -12,6 +12,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import PersonIcon from '@mui/icons-material/Person';
+import Resort from '../../assets/Images/Resort/resortBackground.webp';
 
 const pages = ['Home', 'Menu', 'Eventos', 'Servicios'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -40,7 +41,7 @@ function ResponsiveAppBar() {
 
   return (
     <AppBar position="static" sx={{
-      background: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../../public/resort.jpg")',
+      background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("${Resort}")`,
       backgroundSize: 'cover',
       backgroundPosition: 'center'
     }}>

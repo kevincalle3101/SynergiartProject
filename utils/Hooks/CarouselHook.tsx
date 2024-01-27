@@ -1,7 +1,14 @@
 import { useState } from "react";
 
+
+interface CarouselHookResult {
+  position: number;
+  clickNext: () => void;
+  clickPrev: () => void;
+}
+
 export const caraouselHook = (arrayLenght: number) => {
-  
+
   const [position, setPosition] = useState<number>(0);
 
   const clickPrev = () => {

@@ -5,21 +5,29 @@ import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import lunch1 from '../../../assets/Images/Recomendations/Lunch/lunch1.png';
 import lunch2 from '../../../assets/Images/Recomendations/Lunch/lunch2.png';
 import lunch3 from '../../../assets/Images/Recomendations/Lunch/lunch3.png';
+import lunch4 from '../../../assets/Images/Recomendations/Lunch/lunch4.jpg';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import {caraouselHook} from '../../../../utils/Hooks/CarouselHook.tsx'
+
+interface FoodItem {
+  image: string;
+  name: string;
+  price: string;
+}
 
 const Lunch = () => {
 
   const medium = useMediaQuery('(max-width: 900px)');
   const small = useMediaQuery('(max-width: 650px)');
 
-  const imagesLunch = [
+  const imagesLunch: FoodItem[]= [
     { image: lunch1, name: 'Nombre', price: '0.00$' },
     { image: lunch2, name: 'Nombre', price: '0.00$' },
     { image: lunch3, name: 'Nombre', price: '0.00$' },
-    { image: lunch1, name: 'Nombre', price: '0.00$' }
+    { image: lunch4, name: 'Nombre', price: '0.00$' }
   ];
-
-  // const { position, clickNext, clickPrev } = caraouselHook(imagesLunch.length);
+  const imagesLunchLength: number = imagesLunch.length;
+  const { position, clickNext, clickPrev } = caraouselHook(imagesLunchLength);
 
   return (
     <Box
@@ -67,7 +75,7 @@ const Lunch = () => {
       >
         <IconButton
           sx={{ position: "absolute", left: 0 }}
-          onClick={() => console.log("Izquierda")}
+          onClick={() => clickPrev()}
         >
           <KeyboardArrowLeftIcon fontSize="large"/>
         </IconButton>
@@ -75,7 +83,7 @@ const Lunch = () => {
         {imagesLunch.map((food, index) => (
           <CardCaousel
             key={index}
-            image={food.image}
+            image={imagesLunch[(position + index) % imagesLunchLength].image}
             name={food.name}
             price={food.price}
           />
@@ -84,7 +92,7 @@ const Lunch = () => {
 
         <IconButton
           sx={{ position: "absolute", right: 0 }}
-          onClick={() => console.log("Derecha")}
+          onClick={() => clickNext()}
         >
           <KeyboardArrowRightIcon fontSize="large"/>
         </IconButton>

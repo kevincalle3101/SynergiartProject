@@ -5,14 +5,22 @@ import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import Drinks1 from '../../../assets/Images/Recomendations/Drinks/drink1.png';
 import Drinks2 from '../../../assets/Images/Recomendations/Drinks/drink2.png';
 import Drinks3 from '../../../assets/Images/Recomendations/Drinks/drink3.png';
+import Drinks4 from '../../../assets/Images/Recomendations/Drinks/drink4.jpg';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import {caraouselHook} from '../../../../utils/Hooks/CarouselHook.tsx'
 
+
+interface DrinkItem {
+  image: string;
+  name: string;
+  price: string;
+}
 
 const Drinks = () => {
   const medium = useMediaQuery('(max-width: 900px)');
   const small = useMediaQuery('(max-width: 650px)');
 
-  const imagesDrinks = [
+  const imagesDrinks: DrinkItem[] = [
     {
       image: Drinks1,
       name: 'Nombre',
@@ -29,11 +37,16 @@ const Drinks = () => {
       price: '0.00$',
     },
     {
-      image: Drinks1,
+      image: Drinks4,
       name: 'Nombre',
       price: '0.00$',
     },
   ];
+  const imagesDrinksLength: number = imagesDrinks.length;
+  const { position, clickNext, clickPrev } = caraouselHook(imagesDrinksLength);
+
+
+
   return (
     <Box
       sx={{
@@ -78,7 +91,7 @@ const Drinks = () => {
       >
         <IconButton
           sx={{ position: "absolute", left: 0 }}
-          onClick={() => console.log("Izquierda")}
+          onClick={() => clickPrev()}
         >
           <KeyboardArrowLeftIcon fontSize="large"/>
         </IconButton>
@@ -86,7 +99,7 @@ const Drinks = () => {
         {imagesDrinks.map((food, index) => (
           <CardCaousel
             key={index}
-            image={food.image}
+            image={imagesDrinks[(position + index) % imagesDrinksLength].image}
             name={food.name}
             price={food.price}
           />
@@ -95,7 +108,7 @@ const Drinks = () => {
 
         <IconButton
           sx={{ position: "absolute", right: 0 }}
-          onClick={() => console.log("Derecha")}
+          onClick={() => clickNext()}
         >
           <KeyboardArrowRightIcon fontSize="large"/>
         </IconButton>

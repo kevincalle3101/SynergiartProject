@@ -1,9 +1,15 @@
-import { Typography } from "@mui/material";
-import { Box } from "@mui/system";
+import React from "react";
+import { Typography, Box } from "@mui/material";
 import Event1 from '../../assets/Images/Events/Event1.png';
 import Event2 from '../../assets/Images/Events/Event2.png';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
-const events = [
+interface Props {
+  image: string;
+  name: string;
+}
+
+const events: Props[] = [
   {
     image: Event1,
     name: "Concierto",
@@ -19,14 +25,17 @@ const events = [
 ];
 
 const Events = () => {
+  const medium = useMediaQuery('(max-width: 900px)');
+
   return (
-    <Box width="80%" margin="100px auto">
+    <Box width="80%" margin="50px auto">
       <Typography variant="h5" fontFamily="Jost">
         Eventos
       </Typography>
       <Box
         width="80%"
-        display={{ xs: "block", md: "flex" }}
+        display="flex"
+        flexDirection={{ xs: "column", md: "row" }}
         justifyContent={{ md: "space-around" }}
         margin="20px auto"
       >
@@ -36,16 +45,17 @@ const Events = () => {
             position="relative"
             display="flex"
             justifyContent="center"
+            marginBottom={{ xs: "20px", md: "0" }}
           >
             <img
               style={{
                 objectFit: "cover",
                 borderRadius: "10px",
-                margin: "20px auto",
+                width: medium ? "140%" : "120%",
+                height: medium ? "140%" : "120%",
               }}
               src={item.image}
-              width={350}
-              height={600}
+              alt={item.name}
             />
           </Box>
         ))}
